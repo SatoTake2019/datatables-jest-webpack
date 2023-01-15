@@ -48,7 +48,7 @@ It is written in myapps/static/js/&#095;&#095;datatables__/index.js and is based
 With the above change, tests with Jest will fail with errors. But webpack build is successful and works without error on browser.
 Since the option is set to {paging: false}, the table on the web page will not have pagination.
 
-# Related DataTables' forum post
+# Related DataTables forum post
 https://datatables.net/forums/discussion/75106/error-in-non-jquery-initialization-with-one-option#latest
 
 ## License
