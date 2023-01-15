@@ -22,7 +22,7 @@ Assuming you already have a python virtual environment, go back to the root of t
 
     (venv)$ pip install -r requirements.txt
     (venv)$ cd myapps 
-    (venv)$ python manage.py runserver
+    (venv)$ python manage.py runserver --settings=config.settings
 Visit http://localhost:8000/ in your local browser to see the sample DataTable page.
 Open your browser's dev tools and look at the console to see if there are any errors. For the "ok-split-into-two-files" branch there should be no errors, except favicon errors.
 

@@ -1,0 +1,30 @@
+{
+  "name": "datatables-jest-webpack",
+  "version": "1.0.0",
+  "author": "satotakeshi",
+  "license": "none",
+  "private": true,
+  "scripts": {
+    "test": "jest --no-cache --runInBand --watchALL=false",
+    "dev": "yarn run webpack --config webpack.dev.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/plugin-transform-runtime": "^7.19.6",
+    "@babel/preset-env": "^7.20.2",
+    "babel-jest": "^29.3.1",
+    "babel-loader": "^9.1.2",
+    "imports-loader": "^4.0.1",
+    "jest": "^29.3.1",
+    "jest-environment-jsdom": "^29.3.1",
+    "webpack": "^5.75.0",
+    "webpack-bundle-tracker": "^1.8.0",
+    "webpack-cli": "^5.0.1"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.6",
+    "bootstrap": "5",
+    "datatables.net-bs5": "^1.13.1",
+    "jquery": "^3.6.3"
+  }
+}

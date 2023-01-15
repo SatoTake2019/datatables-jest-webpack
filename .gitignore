@@ -5,6 +5,7 @@ db.sqlite3-journal
 
 # JavaScript
 **/**/node_modules/
+**/**/yarn-error.log
 # JetBrains IDE
 .idea/**/workspace.xml
 .idea/**/tasks.xml
