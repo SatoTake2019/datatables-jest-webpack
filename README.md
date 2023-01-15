@@ -36,8 +36,12 @@ You can check the operation of other branches in the same way. It is summarized 
 | ok-init-without-options | successful           | successful         | successful     |
 | error-init-with-options | fail with errors     | successful         | successful     |
 
+If the table on the displayed web page shows a search box and is paginated, you know that DataTable's default features are enabled.
 
+
+
+
+### Note: The main branch is for working. To see it in action, checkout to the branches listed in the table above to see branch-specific behavior. 
 
 ## License
-
-DataTables is under the MIT License. and its official site is https://datatables.net/. This repository claims no license. The work in this repository also draws on many discussions on https://datatables.net/forums/.
+DataTables is under the MIT License. and its official site is https://datatables.net/. The work in this repository also draws on many discussions on https://datatables.net/forums/. This repository claims no license. 
