@@ -26837,7 +26837,7 @@ __webpack_require__.r(__webpack_exports__);
 
 // export is for test
 function initTable() {
-    let table = new datatables_net_bs5__WEBPACK_IMPORTED_MODULE_0__["default"]('#example');
+    let table = new datatables_net_bs5__WEBPACK_IMPORTED_MODULE_0__["default"]('#example', {paging: false});
     return table;
 }
 document.addEventListener('DOMContentLoaded', function () {
