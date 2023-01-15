@@ -35,6 +35,7 @@ You can check the operation of other branches in the same way. It is summarized 
 |:-----------------------:|----------------------|--------------------|----------------|
 | ok-init-without-options | successful           | successful         | successful     |
 | error-init-with-options | fail with errors     | successful         | successful     |
+| err-on-browser-with-options | successful     | successful         | fail with errors     |
 
 If the table on the displayed web page shows a search box and is paginated, you know that DataTable's default features are enabled.
 ### Note: The main branch is for working. To see it in action, checkout to the branches listed in the table above to see branch-specific behavior.
