@@ -44,12 +44,19 @@ If the table on the displayed web page shows a search box and is paginated, you 
 The only difference between this branch and the "ok-init-table-without-options" branch is the addition of a pair of options to the DataTable initialization expression.
 It is written in myapps/static/js/\__datatables\__/index.js and is based on [Non-jQuery initialization](https://datatables.net/manual/installation#Non-jQuery-initialisation).
 
-        let table = new DataTable('#example', {paging: false});
+    let table = new DataTable('#example', {paging: false});
 
 With the above change, tests with Jest will fail with errors. But webpack build is successful and works without error on browser.
 Since the option is set to {paging: false}, the table on the web page will not have pagination.
 
+# "err-on-browser-with-options" branch
+In this branch, I tried changing the initialization expression to:
 
+    let DataTableFunc = new DataTable(null, null);
+    let table = DataTableFunc.Api('#example', { paging: false});
+    return table;
+
+This expression is not documented in the official site datatables.net, but I tried it as a workaround. As a result, the Jest tests pass and the webpack build succeeds, but I get an error in the browser.
 
 ## License
 DataTables is under the MIT License. and its official site is https://datatables.net/. The work in this repository also draws on many discussions on https://datatables.net/forums/. This repository claims no license. 
