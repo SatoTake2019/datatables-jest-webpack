@@ -4,7 +4,7 @@ This repository is created to investigate an issue where building JavaScript cod
 ----
 # How to reproduce each case about Datatables initialization expression in Javascript
 In this repository, success and error cases are differentiated by placing them in their respective git branches.
-## "ok-init-table-without-options" branch
+# "ok-init-table-without-options" branch
 Assuming yarn is already installed globally.
 After cloning this repository on your local PC, run the following command from the root directory:
 
@@ -37,11 +37,18 @@ You can check the operation of other branches in the same way. It is summarized 
 | error-init-with-options | fail with errors     | successful         | successful     |
 
 If the table on the displayed web page shows a search box and is paginated, you know that DataTable's default features are enabled.
+### Note: The main branch is for working. To see it in action, checkout to the branches listed in the table above to see branch-specific behavior.
+
+# "ok-init-table-without-options" branch
+The only difference between this branch and the "ok-init-table-without-options" branch is the addition of a pair of options to the DataTable initialization expression.
+It is written in myapps/static/js/\__datatables\__/index.js and is based on [Non-jQuery initialization](https://datatables.net/manual/installation#Non-jQuery-initialisation).
+
+        let table = new DataTable('#example', {paging: false});
+
+With the above change, tests with Jest will fail with errors. But webpack build is successful and works without error on browser.
+Since the option is set to {paging: false}, the table on the web page will not have pagination.
 
 
-
-
-### Note: The main branch is for working. To see it in action, checkout to the branches listed in the table above to see branch-specific behavior. 
 
 ## License
 DataTables is under the MIT License. and its official site is https://datatables.net/. The work in this repository also draws on many discussions on https://datatables.net/forums/. This repository claims no license. 
