@@ -40,7 +40,7 @@ If the table on the displayed web page shows a search box and is paginated, you 
 ### Note: The main branch is for working. To see it in action, checkout to the branches listed in the table above to see branch-specific behavior.
 
 # "error-init-with-options" branch
-The only difference between this branch and the "ok-init-table-without-options" branch is the addition of an option **{paging: false}** to the DataTable initialization expression, as described below.  
+The only difference between this branch and the "ok-init-table-without-options" branch is the addition of an option **{paging: false}** to the DataTable initialization expression below.  
 It is written in myapps/static/js/&#095;&#095;datatables__/index.js and is based on [Non-jQuery initialization](https://datatables.net/manual/installation#Non-jQuery-initialisation).
 
         let table = new DataTable('#example', {paging: false});
