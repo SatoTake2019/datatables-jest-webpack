@@ -1,3 +1,4 @@
+// import {jest} from '@jest/globals';
 import { initTable } from "../index";
 
 describe("test Datatable initialization", () => {
