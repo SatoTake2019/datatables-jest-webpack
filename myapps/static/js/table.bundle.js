@@ -29430,23 +29430,29 @@ function initTable() {
         info: true,          // "Showing 1 to 57 of 57 extries"
     };
 
+
+/*
     if (globalThis.hasOwnProperty('test')) {
-        /*
+        *
             This initialization expression passes Jest unit tests,
             but webpack-built bundle file gives an error in the browser.
-         */
-        let DataTableFunc = new datatables_net_bs5__WEBPACK_IMPORTED_MODULE_0__["default"](null, null);
+         *
+        let DataTableFunc = new DataTable(null, null);
         table = new DataTableFunc('#example', options);
     }
     else {
-        /* 
+        * 
             This initialization expression will fail in Jest test, 
             but webpack-built bundle file goes well on browser.
-         */
-        table = new datatables_net_bs5__WEBPACK_IMPORTED_MODULE_0__["default"]('#example', options);
+         *
+        table = new DataTable('#example', options);
     }
+ */
+    table = new datatables_net_bs5__WEBPACK_IMPORTED_MODULE_0__["default"]('#example', options);
     return table;
+
 }
+
 
 document.addEventListener('DOMContentLoaded', function () {
     let table = initTable();

@@ -47,8 +47,6 @@ If the table on the displayed web page shows a search box and is paginated, you 
 4. also replace all "module.exports" to "export default" or "export", including jest.config.js file
 5. this also including webpack*.js file
 4. write the import statement up to the extension
-5. install  webpack-dev-server
-    yarn add -D webpack-dev-server
 
 
 

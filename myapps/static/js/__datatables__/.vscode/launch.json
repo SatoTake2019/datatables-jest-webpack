@@ -1,0 +1,31 @@
+{
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "launch": {
+        "version": "0.2.0",
+        "configurations": [
+            {
+                "type": "pwa-node",
+                "request": "launch",
+                "name": "Debug JavaScript",
+                "skipFiles": [
+                    "<node_internals>\\**"
+                ],
+                "program": ".\\node_modules\\.bin\\jest.cmd",
+                "args": [],
+                "cwd": ".",
+                "runtimeArgs": [
+                    "set NODE_OPTIONS='--experimental-vm-modules --max-old-space-size=6144 --trace-warnings'"
+                ],
+                "console": "integratedTerminal",
+                "outputCapture": "std",
+                "stopOnEntry": true,
+                "justMyCode": true,
+                "jestrunner.debugOptions" : {
+                    "args": ["--no-cache"],
+                    "sourcemaps": "inline",
+                    "disableOptimisticBPs": true,
+                }
+            }
+        ]
+    }
+}

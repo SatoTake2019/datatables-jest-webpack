@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "author": "satotakeshi",
   "license": "none",
+  "type": "module",
   "private": true,
   "scripts": {
-    "test": "jest --no-cache --runInBand --watchALL=false",
+    "test": "set NODE_OPTIONS='--experimental-vm-modules --max-old-space-size=6144 --trace-warnings' && jest --no-cache --runInBand --watchALL=false",
     "dev": "yarn run webpack --config webpack.dev.js"
   },
   "devDependencies": {

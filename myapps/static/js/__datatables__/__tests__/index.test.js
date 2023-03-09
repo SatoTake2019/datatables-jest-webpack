@@ -1,13 +1,15 @@
-import fs from "fs";
-import { initTable } from "../index";
+//const { createRequire } = require("node:module");
+//const require = createRequire(import.meta.url);
+const {readFileSync} = require("fs");
+import { initTable } from "../index.js";
 
 describe("test Datatable initialization", () => {
     test("test one module", () => {
         // provide an empty implementation for window.alert
         window.alert = () => {};
 
-        document.body.innerHTML = fs.readFileSync(
-            __dirname + `/rendered.html`, { encoding: "utf-8" });
+        document.body.innerHTML = readFileSync(
+            `__tests__/rendered.html`, { encoding: "utf-8" });
 
         // these elements are not existing before init
         let pagination_elements = document.getElementsByClassName('pagination');
