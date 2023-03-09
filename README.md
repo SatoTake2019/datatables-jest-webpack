@@ -39,6 +39,18 @@ You can check the operation of other branches in the same way. It is summarized 
 If the table on the displayed web page shows a search box and is paginated, you know that DataTable's default features are enabled.
 
 
+# To change into ES6 module
+
+1. make sure nodejs version >= 16
+2. add "type": "module",  in package.json
+3. replace all "require()" to "import"
+4. also replace all "module.exports" to "export default" or "export", including jest.config.js file
+5. this also including webpack*.js file
+4. write the import statement up to the extension
+5. install  webpack-dev-server
+    yarn add -D webpack-dev-server
+
+
 
 
 ### Note: The main branch is for working. To see it in action, checkout to the branches listed in the table above to see branch-specific behavior. 

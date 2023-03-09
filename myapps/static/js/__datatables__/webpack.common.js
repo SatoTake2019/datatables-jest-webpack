@@ -1,4 +1,7 @@
-const path = require('path');
+// const path = require('path');
+import { path } from "path";
+const __dirname = path.resolve(path.dirname('')); 
+
 
 module.exports = (outputFile, htmlMinifyOption) => ({
   entry: {
