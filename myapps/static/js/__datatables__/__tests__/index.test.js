@@ -11,7 +11,7 @@ describe("test Datatable initialization", () => {
         const table = initTable();
 
         expect(table).not.toBeUndefined();
-
+        expect(table.hasOwnProperty('rowReorder')).toBeTruthy();
 
         const table_element = document.getElementById('example');
 

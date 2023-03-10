@@ -2,6 +2,40 @@
 This repository is created to investigate an issue where building JavaScript code related to DataTables initialization with webpack causes an error.
 
 ----
+まず、Babelの設定で、Jestのテストの場合は、CJSに変換してくれるように設定する。
+https://qiita.com/riversun/items/6c30a0d0897194677a37
+だた、./node_modules/以下のライブラリに関しては、変換してくれないので、
+jest.config.jsを
+
+transform: {
+    ".mjs": "babel-jest",
+    ".js": "babel-jest",
+  },
+  transformIgnorePatterns: [
+    "node_modules\\(?!jest-runtime\\build\\)",
+  ],
+
+のように修正して、index.jsから
+
+import DataTable from "datatables.net/js/jquery.dataTables.mjs";
+import "datatables.net-rowreorder/js/dataTables.rowReorder.js";
+
+のように直接 ESM を読み込むように指定しても、DTライブラリ内で、多段階のimportをするうちに
+＄.fn.dataTable がundefineとか ...Apiがundefineとか、DataTable.defaultがundefineとか
+上手く行かないので、ESMをCJSに変換できたとしても無理だと思う。
+
+したがって、ライブラリのコードをいじるような、汚いやり方だが、
+success-load-ext-but-ugly ブランチのやり方が有力（危険性はあるが確実である）。
+危険性というのは、ライブラリのソースをコピーして、書き換えるようなやり方なので、
+本番環境との不整合が無いように注意しないといけないという事。
+また、MITライセンスをこのような形でコピーしてというのは、まずくないのだろうか？
+
+
+
+
+
+
+
 # How to reproduce each case about Datatables initialization expression in Javascript
 In this repository, success and error cases are differentiated by placing them in their respective git branches.
 # "ok-init-table-without-options" branch
