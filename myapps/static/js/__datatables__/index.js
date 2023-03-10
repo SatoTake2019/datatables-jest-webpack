@@ -1,43 +1,26 @@
-import DataTable from "datatables.net-bs5";
-import "datatables.net-fixedcolumns-bs5";
-import "datatables.net-fixedheader-bs5";
-import "datatables.net-rowreorder-bs5";
+import DforJEST from "./datatables.bootstrap5";  // inside my project
+import './dataTables.rowReorder';                // inside my project
+import DforBROWSER from "datatables.net-bs5";   // from ./node_modules/...
+import "datatables.net-rowreorder-bs5";         // from ./node_modules/...
 
-// export is for test
+let DataTable;
+DataTable = (process.env['NODE_ENV'] === 'test') ? DforJEST : DforBROWSER;
+
+// export for test
 export function initTable() {
-    let table;
     const options = {
-        paging: true,    // Pagination
-        searching: true,  // Search box
-        lengthChange: false,   // Pulldown Menu for num of items displayed per page
-        autoWidth: false,    // autofit column width
-        info: true,          // "Showing 1 to 57 of 57 extries"
+        rowReorder: {
+            snapX: true,        // ドラッグした時に横方向に動かないようにする。
+            update: false        //  ドロップした時に、自動再描画する
+        },
     };
-
-
-/*
-    if (globalThis.hasOwnProperty('test')) {
-        *
-            This initialization expression passes Jest unit tests,
-            but webpack-built bundle file gives an error in the browser.
-         *
-        let DataTableFunc = new DataTable(null, null);
-        table = new DataTableFunc('#example', options);
-    }
-    else {
-        * 
-            This initialization expression will fail in Jest test, 
-            but webpack-built bundle file goes well on browser.
-         *
-        table = new DataTable('#example', options);
-    }
- */
-    table = new DataTable('#example', options);
+    let table = new DataTable('#example', options);
     return table;
 
 }
 
+document.addEventListener("DOMContentLoaded", function (event) {
+    const datatable = initTable();
+    console.log(datatable.rowReorder);
+}, false);
 
-document.addEventListener('DOMContentLoaded', function () {
-    let table = initTable();
-});
