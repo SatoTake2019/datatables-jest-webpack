@@ -182,10 +182,12 @@ module.exports = {
   // testRunner: "jest-circus/runner",
 
   // A map from regular expressions to paths to transformers
-  //transform: {
-  //    '\\.[jt]sx?$': 'babel-jest',      // by default
-  //},
   // transform: {},
+  // transform: undefined,
+  transform: {
+      '\\.[jt]sx?$': 'babel-jest',      // by default
+  },
+  
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   // transformIgnorePatterns: [
