@@ -20,5 +20,8 @@ export function initTable() {
 
 document.addEventListener("DOMContentLoaded", function (event) {
     const datatable = initTable();
-    console.log(datatable.rowReorder);
+    const table_element = document.getElementById('example');
+    // So that I can try with DataTable Api on the browser
+    table_element.datatable = datatable;
+    console.log("Existence check of rowReorder", datatable.rowReorder);
 });

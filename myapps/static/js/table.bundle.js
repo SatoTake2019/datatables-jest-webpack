@@ -44484,7 +44484,7 @@ __webpack_require__.r(__webpack_exports__);
 let DataTable;
 DataTable = ( false) ? 0 : datatables_net_bs5__WEBPACK_IMPORTED_MODULE_2__["default"];
 
-// export is for test
+// export for test
 function initTable() {
     const options = {
         rowReorder: {
@@ -44498,9 +44498,12 @@ function initTable() {
 
 document.addEventListener("DOMContentLoaded", function (event) {
     const datatable = initTable();
-    console.log(datatable.rowReorder);
-    
+    const table_element = document.getElementById('example');
+    // So that I can try with DataTable Api on the browser
+    table_element.datatable = datatable;
+    console.log("Existence check of rowReorder", datatable.rowReorder);
 });
+
 })();
 
 /******/ })()
